@@ -1,0 +1,198 @@
+.container {
+    margin: auto;
+    max-width: 700px;
+    min-width: 300px;
+    width: 95%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+/* h1 animation */
+.title {
+    color: #000; 
+    font-size: 20px;
+    text-align:  left;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 40em;
+}
+
+.p1 {
+    animation: scrollingText1 5s steps(60, end);
+}
+
+.p2 {
+    animation: scrollingText2 6s steps(60, end);
+}
+  
+.p3 {
+    animation: scrollingText3 10s steps(60, end);
+}
+  
+@keyframes scrollingText1 { 
+    from { width: 0; } 
+} 
+
+@keyframes scrollingText2 {
+    0%{width: 0;}
+    50%{width: 0;}
+    100%{ width: 100; } 
+} 
+
+@keyframes scrollingText3 {
+    0%{width: 0;}
+    50%{width: 0;}
+    100%{ width: 100; } 
+}
+
+/* Text animated "Hello world !"*/
+.animText {
+    /* text-align: center; */
+    margin-top: 20px;
+    color: black;
+    font-size: 1.0em;
+    font-family: sans-serif;
+    /* text-transform: uppercase; */
+    cursor: pointer;
+}
+
+.animated {
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+/* RubberBand animation */
+.rubberBand {
+    font-size: 50px;
+    animation-name: rubberBand;
+    animation-play-state: paused; 
+}
+.rubberBand:hover {
+    animation-play-state: running;
+}
+
+@keyframes rubberBand {
+    0% {transform: scale(1);}
+    30% {transform: scaleX(1.25) scaleY(0.75);}
+    40% {transform: scaleX(0.75) scaleY(1.25);}
+    60% {transform: scaleX(1.15) scaleY(0.85);}
+    100% {transform: scale(1);}
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+.bounce {
+    animation-name: bounce;
+}
+
+/* Down arrow */
+i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+}
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+/* Fade in overlay */
+.imgBloc {
+    position: relative;
+    width: 50%;
+}
+    
+.image {
+    display: block;
+    width: 50%;
+    height: 50%;
+}
+    
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(39, 197, 250);
+}
+    
+.imgBloc:hover .overlay {
+    opacity: 1;
+}
+    
+.overlayText {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Hide/show text */
+#skills {
+    cursor: pointer;
+}
+
+/* Underline from center */
+.linkUnderline {
+    /* background-color: #ecf0f1;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); 
+    font-weight: bold;
+    text-transform: uppercase;*/
+    color: #2980b9;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: fit-content;
+  }
+.linkUnderline:hover {
+    box-shadow: 0;
+  }
+
+.underline-from-center {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow: hidden;
+}
+:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    background: #2980b9;
+    height: 2px;
+    -webkit-transition-property: left right;
+    transition-property: left right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.underline-from-center:hover:before {
+    left: 0;
+    right: 0;
+}
