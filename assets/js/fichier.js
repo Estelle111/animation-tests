@@ -1,13 +1,13 @@
 /* Read more */
 
-/* $(document).ready(function(){
-    $(".button").click(function () {
-       var div= $("."+this.name);
-  div.toggle("slow").siblings().hide("slow");
-});
+$(document).ready(function(){
+  $(".button").click(function () {
+    var div= $("#"+this.name);
+    div.toggle("slow").siblings().hide("slow");
+  });
 });  
 
-function toggle_visibility(id) {
+/* function toggle_visibility(id) {
   var e = document.getElementById(id);
   if(e.style.display == 'block')
      e.style.display = 'none';
